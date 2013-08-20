@@ -2,10 +2,9 @@
 'use strict';
 
 var app = angular.module('ngApp', [
-  'namespace.component-name'
+  'yaru22.filters.skip'
 ]);
 
 app.controller('demoController', function($scope) {
-  $scope.text1 = 'Bling bring bring';
-  $scope.text2 = 'Hello world';
+  $scope.items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 });

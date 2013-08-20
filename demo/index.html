@@ -6,18 +6,40 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Directive Demo Page</title>
+
+  <title>Skip Filter Demo Page</title>
+
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
 
-  <link href="component.css" rel="stylesheet" />
+  <link href="pure.css" rel="stylesheet" />
+  <style>
+  .wrapper {
+    width: 500px;
+    margin: 0 auto;
+  }
+  </style>
 </head>
 <body ng-controller="demoController">
-  <blink>{{ text1 }}</blink>
-  <blink>{{ text2 }}</blink>
+  <div class="pure-g-r wrapper">
+    <div class="pure-u-1">
+<pre><code>
+items = {{ items }}
+items | skip:3 | limitTo:5
+Expected result is {{ items.slice(3, 3 + 5) }}.
+</code></pre>
+    </div>
+
+    <div class="pure-u-1">
+      <h2>Result</h2>
+      <div ng-repeat="item in items | skip:3 | limitTo: 5">
+        {{ item }}
+      </div>
+    </div>
+  </div>
 
   <script src="angular.js"></script>
-  <script src="component.js"></script>
+  <script src="skip.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
